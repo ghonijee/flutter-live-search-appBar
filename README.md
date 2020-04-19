@@ -1,3 +1,27 @@
+1. buat data
+2. persiapkan main sampai statfullwidget livesearch
+3. deklarasi list dan init untuk listnya.
+4. buat appBar searchnya 
+5. buat widget textfieldnya
+6. buat fungsi carinya
+
+test.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # appbar_search
 
 A new Flutter project.

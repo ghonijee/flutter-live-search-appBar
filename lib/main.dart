@@ -21,13 +21,8 @@ class LiveSearch extends StatefulWidget {
 class _LiveSearchState extends State<LiveSearch> {
   TextEditingController _controllerSearch = TextEditingController();
   Widget searchTextField;
-  Widget _iconSearch = Icon(Icons.search);
-  Widget _iconColose = Icon(
-    Icons.close,
-    color: Colors.black,
-  );
   bool search = false;
-  Color _color = Colors.blue;
+  Color _bgColor = Colors.blue;
   List list = List<String>();
 
   @override
@@ -40,21 +35,24 @@ class _LiveSearchState extends State<LiveSearch> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: _color,
+        backgroundColor: _bgColor,
         title: searchTextField,
         actions: <Widget>[
           (!search)
               ? IconButton(
-                  icon: _iconSearch,
+                  icon: Icon(Icons.search),
                   onPressed: () {
                     setState(() {
                       searchTextField = appSearch(context);
-                      _color = Colors.white;
+                      _bgColor = Colors.white;
                       search = !search;
                     });
                   })
               : IconButton(
-                  icon: _iconColose,
+                  icon: Icon(
+                    Icons.close,
+                    color: Colors.black,
+                  ),
                   onPressed: () {
                     setState(() {
                       list.clear();
@@ -92,7 +90,7 @@ class _LiveSearchState extends State<LiveSearch> {
                 setState(() {
                   searchTextField = Text("List Users");
                   search = !search;
-                  _color = Colors.blue;
+                  _bgColor = Colors.blue;
                   _controllerSearch.clear();
                   list.clear();
                   list.addAll(items);
